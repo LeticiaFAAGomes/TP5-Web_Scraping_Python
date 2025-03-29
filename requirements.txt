@@ -7,3 +7,4 @@ google-api-core
 python-dotenv  
 python-dateutil  
 starlette  
+uvicorn
