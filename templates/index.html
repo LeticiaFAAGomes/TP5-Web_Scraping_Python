@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TP5</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <script src="https://kit.fontawesome.com/43043367e5.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">TP5</div>
+        <a class="hamburger" title="Menu de Navegação">
+          <i class="fa-solid fa-bars" onclick="abrirMenu()"></i>
+        </a>
+        <ul>
+          <li><a onclick="navegar('tp5-1')">TP5.1</a></li>
+          <li><a onclick="navegar('tp5-2')">TP5.2</a></li>
+          <li><a onclick="navegar('tp5-3')">TP5.3</a></li>
+          <li><a onclick="navegar('tp5-4')">TP5.4</a></li>
+          <li><a onclick="navegar('tp5-5')">TP5.5</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="tps">
+        <section class="tp" id="tp5-1">
+          <h2><strong>TP5.1</strong> - Mostrar todos os eventos com suas datas, localização, e tipo de evento.</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Data</th>
+                <th>Local</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for tp in tp5_1 %}
+              <tr>
+                <td>{{tp.nome}}</td>
+                <td>{{tp.tipo}}</td>
+                <td>{{tp.data}}</td>
+                <td>{{tp.local}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </section>
+        <section class="tp" id="tp5-2">
+          <h2><strong>TP5.2</strong> - Mostrar os dados dos 2 eventos mais próximos de iniciar.</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Data</th>
+                <th>Local</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for tp in tp5_2 %}
+              <tr>
+                <td>{{tp.nome}}</td>
+                <td>{{tp.local}}</td>
+                <td>{{tp.data}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </section>
+        <section class="tp" id="tp5-3">
+          <h2><strong>TP5.3</strong> - Mostrar os eventos que acontecem no Brasil.</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Data</th>
+                <th>Local</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for tp in tp5_3 %}
+              <tr>
+                <td>{{tp.nome}}</td>
+                <td>{{tp.local}}</td>
+                <td>{{tp.data}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </section>
+        <section class="tp" id="tp5-4">
+          <h2><strong>TP5.4</strong> - Mostrar todos os eventos que são ao ar livre.</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Data</th>
+                <th>Local</th>
+                <th>Ambiente</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for tp in tp5_4 %}
+              <tr>
+                <td>{{tp.nome}}</td>
+                <td>{{tp.tipo}}</td>
+                <td>{{tp.local}}</td>
+                <td>{{tp.data}}</td>
+                <td>{{tp.ambiente}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </section>
+        <section id="tp5-5" class="tp">
+          <h2><strong>TP5.5</strong> - Mostrar todos os Metadados por evento.</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Chaves</th>
+                <th>Metadados</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for tp in tp5_5 %}
+              <tr>
+                <td>{{tp.nome}}</td>
+                <td>{{tp.Chaves}}</td>
+                <td>{{tp.Metadados}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </section>
+      </div>
+      <a class="scroll-up" onclick="scrollTopo()" title="Voltar para o topo"><i class="fa-solid fa-angles-up"></i></a>
+    </main>
+    <script src="static/js/script.js"></script>
+  </body>
+</html>

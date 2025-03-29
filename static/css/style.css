@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --cor-primaria: #1a2334;
+  --cor-secundaria: #091421;
+  --cor-fonte-geral: #d6f5ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  font-size: 1.2rem;
+  scroll-behavior: smooth;
+}
+
+@keyframes abrirMenu {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes fecharMenu {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+body {
+  background-color: var(--cor-primaria);
+}
+
+header {
+  width: 100%;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--cor-secundaria);
+  box-shadow: 1px 0px 31px -11px rgba(0, 0, 0, 1);
+  z-index: 1;
+}
+
+h2 {
+  margin-bottom: 40px;
+  color: var(--cor-fonte-geral);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+a,
+.logo {
+  color: var(--cor-fonte-geral);
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header nav .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+header ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+header ul a:hover {
+  color: rgb(175, 175, 175) !important;
+}
+
+.hamburger i {
+  display: none;
+  position: absolute;
+  top: 25px;
+  color: var(--cor-fonte-geral);
+  font-size: 1.5rem;
+}
+
+main {
+  padding: 110px 0 60px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main table {
+  margin-bottom: 40px;
+  padding: 10px;
+  width: 100%;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-fonte-geral);
+  border-radius: 20px;
+  border-collapse: collapse;
+  box-shadow: 10px 10px 53px -10px rgba(0, 0, 0, 0.048);
+}
+
+main th {
+  padding: 15px 0;
+  border-bottom: 2px solid var(--cor-primaria);
+}
+
+main td {
+  padding: 15px 20px;
+}
+
+main th,
+main td {
+  font-size: 0.9rem;
+}
+
+.scroll-up {
+  padding: 10px 15px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--cor-secundaria);
+  font-size: 1.5rem;
+  border: 2px solid var(--cor-primaria);
+  border-radius: 50%;
+  box-shadow: 10px 10px 53px -12px rgba(27, 27, 27, 0.24);
+  opacity: 0.7;
+}
+
+.scroll-up:hover {
+  opacity: 0.5;
+}
+
+@media (max-width: 1250px) {
+  .hamburger i {
+    display: flex;
+  }
+
+  nav ul {
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 70px;
+    background-color: var(--cor-secundaria);
+    text-align: center;
+    animation: fecharMenu 0.8s ease forwards;
+  }
+
+  nav ul li {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul a {
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  .active {
+    display: flex !important;
+    animation: abrirMenu 0.8s ease forwards;
+  }
+
+  h2 {
+    padding: 10px;
+  }
+
+  .tp {
+    margin: 20px;
+  }
+
+  table th,
+  table td {
+    padding: 10px;
+    font-size: 0.6rem;
+    word-break: break-all;
+    width: 10px;
+  }
+}

@@ -1,0 +1,9 @@
+fastapi  
+jinja2  
+beautifulsoup4  
+requests  
+google-generativeai  
+google-api-core  
+python-dotenv  
+python-dateutil  
+starlette  
